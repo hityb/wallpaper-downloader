@@ -1,6 +1,8 @@
 package org.itlog.wallpaper.downloader;
 
+import cn.hutool.core.codec.Base64Decoder;
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.net.URLDecoder;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.Log;
 
@@ -8,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -16,7 +19,7 @@ public class CustomUI extends MainUI {
 
     {
         picSizeInit();
-        fileDirText.setText(getPath());
+        fileDirText.setText(URLDecoder.decode(getPath(), StandardCharsets.UTF_8));
         downloadBtn.addActionListener(e -> {
             progressBar1.setValue(0);
             if (!validateDir()) return;

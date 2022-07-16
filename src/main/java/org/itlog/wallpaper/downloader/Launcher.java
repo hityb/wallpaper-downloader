@@ -21,7 +21,7 @@ public class Launcher {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setTitle("王者荣耀壁纸下载器");
-        URL resource = CustomUI.class.getResource("/icon.ico");
+        URL resource = CustomUI.class.getResource("/logo.png");
         ImageIcon imageIcon = new ImageIcon(Objects.requireNonNull(resource).getPath());
         frame.setIconImage(imageIcon.getImage());
 
